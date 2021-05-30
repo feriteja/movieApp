@@ -18,6 +18,7 @@ const search = () => {
         </Text>
       </View>
       <Search data={setDataSearch} setError={setError} />
+      <Gap height={30} />
       {error ? (
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
           <Text>Data not found</Text>

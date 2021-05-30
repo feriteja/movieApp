@@ -23,6 +23,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import axios from 'axios';
+import Config from 'react-native-config';
 
 const {height, width} = Dimensions.get('window');
 
@@ -51,7 +52,7 @@ const detail = () => {
   const getData = useCallback(async () => {
     const response = await axios.get('http://www.omdbapi.com/', {
       params: {
-        apikey: '958faa09',
+        apikey: Config.API_KEY,
         i: route.params.item.imdbID,
         plot: 'full',
       },

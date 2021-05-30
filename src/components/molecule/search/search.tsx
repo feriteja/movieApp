@@ -3,6 +3,7 @@ import {StyleSheet, Text, TextInput, View} from 'react-native';
 import IconFeather from 'react-native-vector-icons/Feather';
 import axios from 'axios';
 import {item, searchResponse} from '../../../constant/type/normalType';
+import Config from 'react-native-config';
 
 type props = {
   editable?: boolean;
@@ -15,7 +16,7 @@ const search = ({editable = true, data, setError}: props) => {
     try {
       const response = await axios.get('http://www.omdbapi.com/', {
         params: {
-          apikey: '958faa09',
+          apikey: Config.API_KEY,
           s: textSearch,
         },
       });
